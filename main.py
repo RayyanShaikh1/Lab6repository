@@ -39,4 +39,6 @@ while True:
     if option == 2:
         print(f'The encoded password is {new_password} and the original password is {decode(new_password)}.')
         new_password = ''
+    if option == 3:
+        break
         
