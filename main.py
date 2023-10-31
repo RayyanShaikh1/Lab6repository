@@ -12,6 +12,18 @@ def encode(password):
 # decoder functions subtracts 3 from each digit in the encoded password
 
 
+def decode(password):
+    if len(password) != 8 or not password.isdigit():
+        return False
+    else:
+        decoded_pas = ''
+        for digit in password:
+            encoded = int(digit)
+            decoded_dig = (encoded - 3) % 10
+            decoded_pas += str(decoded_dig)
+        return decoded_pas
+
+
 new_password = ''
 # main while loop
 while True:
@@ -24,3 +36,7 @@ while True:
             print('Your password has been encoded and stored!')
         except:
             print("error message")
+    if option == 2:
+        print(f'The encoded password is {new_password} and the original password is {decode(new_password)}.')
+        new_password = ''
+        
